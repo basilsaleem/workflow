@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Workflow Definition",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique workflow ID"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable workflow name"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Unique name for the step"
+          },
+          "type": {
+            "type": "string",
+            "description": "Step type mapped to a Java handler"
+          },
+          "retry": {
+            "type": "object",
+            "properties": {
+              "maxAttempts": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "backoffMillis": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "maxAttempts"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "type"
+        ]
+      }
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "steps"
+  ],
+  "additionalProperties": false,
+  "description": "Schema for defining a workflow with steps and retry policies"
+}

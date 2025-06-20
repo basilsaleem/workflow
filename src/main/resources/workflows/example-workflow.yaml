@@ -1,0 +1,10 @@
+id: exampleWorkflow
+name: Say hello on file
+steps:
+  - name: validateUser
+    type: validateUser
+  - name: sendEmail
+    type: emailSender
+    retry:
+      maxAttempts: 3
+      backoffMillis: 2000
