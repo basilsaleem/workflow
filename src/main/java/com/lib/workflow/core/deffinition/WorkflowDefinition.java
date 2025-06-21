@@ -1,4 +1,6 @@
-package com.lib.workflow;
+package com.lib.workflow.core.deffinition;
+
+import com.lib.workflow.core.type.WorkflowType;
 
 import java.util.List;
 import java.util.Objects;
@@ -6,6 +8,7 @@ import java.util.Objects;
 public class WorkflowDefinition {
     private String id;
     private String name;
+    private WorkflowType workflowType;
     private List<WorkflowStepDefinition> steps;
 
     public String getName() {

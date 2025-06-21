@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class RetryPolicy {
     private int maxAttempts;
-    private long backoffMillis;
+    private long backoffMillis; // milliseconds to wait between retries
 
     public long getBackoffMillis() {
         return backoffMillis;

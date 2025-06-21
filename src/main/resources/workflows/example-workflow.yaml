@@ -1,10 +1,10 @@
 id: exampleWorkflow
 name: Say hello on file
 steps:
-  - name: validateUser
-    type: validateUser
-  - name: sendEmail
-    type: emailSender
+  - name: consolePrinter
+    type: consolePrinter
+  - name: sayHello
+    type: writeOnConsole
     retry:
       maxAttempts: 3
       backoffMillis: 2000

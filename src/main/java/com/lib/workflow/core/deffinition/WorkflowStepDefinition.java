@@ -1,4 +1,6 @@
-package com.lib.workflow;
+package com.lib.workflow.core.deffinition;
+
+import com.lib.workflow.RetryPolicy;
 
 import java.util.Objects;
 
